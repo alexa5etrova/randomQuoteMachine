@@ -1,0 +1,58 @@
+.quoteBox{
+    width: 600px;
+    background-color: yellow;
+    height: 400px;
+    position : absolute;    
+    left     : 50%;
+    top      : 50%;
+    margin-left : -300px; 
+    margin-top  : -200px; 
+    font-family: 'Roboto', sans-serif;
+    border-radius: 4rem;
+    border: 2px solid #17232b;
+    
+    
+}
+
+ .text {
+    font-size:1.5rem;
+    color: #17232b;
+    margin: 2rem;
+    margin-top: 5rem;
+    font-style: italic;
+  
+
+ }
+  .author{
+    font-size:1.3rem;
+    color:#17232b;
+    text-align:right;
+    margin-right:2rem;
+   
+
+  }
+  .button{
+    width: 10rem;
+    height:5rem;
+    font-size:1.3rem;
+    background-color: #17232b;
+    color: white;
+    border-radius: 2rem;
+    position : absolute;    
+    left     : 37%;
+    top      : 70%;
+    
+    
+       
+  }
+  .icons{
+    position : absolute;    
+    left     : 10%;
+    top      : 70%;
+   
+  }
+  .image{
+    width: 2rem;
+    border-radius: 10px;
+  }
+  
