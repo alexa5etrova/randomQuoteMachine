@@ -1,6 +1,6 @@
 {
-  "name": "quote-machine",
   "author": "Alexandra Petrova",
+  "name": "quote-machine",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
