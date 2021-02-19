@@ -41,10 +41,10 @@
     position : absolute;    
     left     : 37%;
     top      : 70%;
-    
-    
-       
-  }
+}
+.button:disabled{
+  background-color: grey;
+}
   .icons{
     position : absolute;    
     left     : 10%;

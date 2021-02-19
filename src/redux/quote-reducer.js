@@ -1,7 +1,8 @@
 import React from 'react';
 import { getNewQuoteApi } from '../api/api';
 
-const SET_QUOTE = "SET_QUOTE";
+const SET_QUOTE = "quote_machine/QUOTE/SET_QUOTE";
+const TOGGLE_IS_FETCHING = "quote_machine/QUOTE/TOGGLE_IS_FETCHING";
 
 const initialState = {
     quoteData: {},
@@ -17,7 +18,8 @@ const initialState = {
         '#a3a36c',
         '#85a28d',
         '#93aa90'
-      ]
+      ],
+    toggleIsFetching: false  
     
 }
 
@@ -28,6 +30,11 @@ const quoteReducer = (state = initialState, action) =>{
             ...state,
             quoteData: action.quoteData
         }
+    case TOGGLE_IS_FETCHING:
+        return {
+            ...state,
+            toggleIsFetching: action.fetching
+        }    
 
      default:
          return state;   
@@ -40,13 +47,17 @@ export const setQuote =(quoteData)=>({
     quoteData
 });
 
+export const toggleIsFetchingActionCreator = (toggleIsFetching)=>({
+    type: TOGGLE_IS_FETCHING,
+    toggleIsFetching
+});
 
-export const requestNewQuote = () =>{
-     return (dispatch)=>{
-         getNewQuoteApi().then(responce =>{ 
-            dispatch(setQuote(responce.data))})
 
-    }
+export const requestNewQuote = () => async (dispatch) =>{
+        dispatch(toggleIsFetchingActionCreator(true));
+        let responce = await getNewQuoteApi();
+        dispatch(setQuote(responce.data));
+        dispatch(toggleIsFetchingActionCreator(false));    
 }
 
 
